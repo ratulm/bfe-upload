@@ -1,5 +1,5 @@
 # bfe-upload
-This action uploads a network snapshot to a Batfish Enterprise service
+This action uploads a network snapshot to a Batfish Enterprise service.
 
 ## Usage
 

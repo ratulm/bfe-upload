@@ -9,17 +9,17 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
 
+    - name: hostname test
+      run: |
+        sudo cat "127.0.0.1 bfedev.local.intentionet.com" >> /etc/hosts
+        ping bfedev.local.intentionet.com
+      id: hostname_test
+
     - name: Checkout this repo
       uses: actions/checkout@v2
       with:
         path: main #to reference files from this repo, the filepath to use will be $GITHUB_WORKSPACE/main
         
-    - name: hostname test
-      run: |
-        cat "127.0.0.1 bfedev.local.intentionet.com" >> /etc/hosts
-        ping bfedev.local.intentionet.com
-      id: hostname_test
-
     # Ensure your snapshot directory is organized in the way described at
     # https://batfish.readthedocs.io/en/latest/notebooks/interacting.html#Packaging-snapshot-data
     - name: Create snapshot directory required for Batfish
